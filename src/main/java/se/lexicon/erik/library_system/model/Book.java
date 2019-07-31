@@ -14,7 +14,6 @@ public class Book {
 	private String description;
 	
 	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
-		super();
 		setTitle(title);
 		setMaxLoanDays(maxLoanDays);
 		setFinePerDay(finePerDay);
