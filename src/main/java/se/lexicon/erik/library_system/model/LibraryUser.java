@@ -2,6 +2,11 @@ package se.lexicon.erik.library_system.model;
 
 import java.time.LocalDate;
 
+/**
+ * Stores basic information about library users
+ * @author Erik Svensson
+ *
+ */
 public class LibraryUser {
 	private static int userCount = 0;
 	private int userId;

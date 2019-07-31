@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ * 
+ * @author Erik Svensson
+ *
+ */
 public class Loan {
 	
 	private static long loanNumber = 0;
@@ -14,6 +19,13 @@ public class Loan {
 	private LocalDate loanDate;
 	private boolean terminated;
 	
+	/**
+	 * 
+	 * @param loanTaker - LibraryUser that is borrowing a book
+	 * @param book - The Book that the LibraryUser is borrowing
+	 * @param loanDate - The date the loan was started
+	 * @throws IllegalArgumentException when trying to lend a book that is not available 
+	 */
 	public Loan(LibraryUser loanTaker, Book book, LocalDate loanDate) {
 		setLoanTaker(loanTaker);
 		setBook(book);
@@ -44,6 +56,10 @@ public class Loan {
 		this.book = book;
 	}
 	
+	/**
+	 * Register the book as being returned by making the book become available.
+	 * Terminates the Loan
+	 */
 	public void returnBook() {
 		this.book.setAvailable(true);
 		this.terminated = true;
@@ -83,6 +99,10 @@ public class Loan {
 		return fine;
 	}
 	
+	/**
+	 * Prolongs the loan if book is neither reserved or overdue
+	 * @return TRUE if loan is extended, otherwise FALSE
+	 */
 	public boolean extendLoan() {
 		if(book.isReserved() || isOverDue()) {
 			return false;

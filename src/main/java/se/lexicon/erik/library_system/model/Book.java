@@ -2,6 +2,11 @@ package se.lexicon.erik.library_system.model;
 
 import java.math.BigDecimal;
 
+/**
+ * 
+ * @author Erik Svensson
+ *
+ */
 public class Book {
 	private static int bookCounter = 0;
 	
