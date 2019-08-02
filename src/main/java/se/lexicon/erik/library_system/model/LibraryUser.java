@@ -8,15 +8,20 @@ import java.time.LocalDate;
  *
  */
 public class LibraryUser {
-	private static int userCount = 0;
+	
 	private int userId;
 	private LocalDate regDate;
 	private String name;
 	
+		
+	public LibraryUser(int userId, LocalDate localDate, String name) {
+		this(localDate, name);
+		this.userId = userId;		
+	}
+
 	public LibraryUser(LocalDate regDate, String name) {
 		this.regDate = regDate;
-		setName(name);
-		this.userId = ++userCount;
+		setName(name);		
 	}
 	
 	public int getUserId() {
