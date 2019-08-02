@@ -16,14 +16,24 @@ public class Book {
 	private boolean reserved;
 	private int maxLoanDays;
 	private BigDecimal finePerDay;
-	private String description;
-	
+	private String description;		
+
+	public Book(int bookId, String title, boolean available, boolean reserved, int maxLoanDays, BigDecimal finePerDay,
+			String description) {
+		this.bookId = bookId;
+		this.title = title;
+		this.available = available;
+		this.reserved = reserved;
+		this.maxLoanDays = maxLoanDays;
+		this.finePerDay = finePerDay;
+		this.description = description;
+	}
+
 	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
 		setTitle(title);
 		setMaxLoanDays(maxLoanDays);
 		setFinePerDay(finePerDay);
-		setDescription(description);
-		this.bookId = ++bookCounter;
+		setDescription(description);		
 		setAvailable(true);
 		setReserved(false);
 	}
